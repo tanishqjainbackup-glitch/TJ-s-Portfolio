@@ -99,7 +99,7 @@ nav{
 .case-trigger:hover .case-arrow{color:var(--blue)}
 
 .case-body{max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1)}
-.case-card.open .case-body{max-height:500px}
+.case-card.open .case-body{max-height:900px}
 .case-body-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding-bottom:2rem}
 .case-body-text{font-size:14px;color:var(--muted);line-height:1.85}
 .case-big-metrics{display:flex;flex-direction:column;gap:10px}
@@ -189,19 +189,8 @@ nav{
   .hstat{flex:calc(50% - 1px)}
 }
 
-  /* EAT AT DESK GALLERY */
-  .ead-gallery{
-    display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
-    margin-top:1rem;padding-bottom:1.5rem;
-  }
-  .ead-img-wrap{
-    border-radius:8px;overflow:hidden;
-    aspect-ratio:1;background:var(--warm);
-    border:1px solid var(--border);
-  }
-  .ead-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
-  .ead-img-wrap:hover .ead-img{transform:scale(1.04)}
-  @media(max-width:768px){.ead-gallery{grid-template-columns:repeat(3,1fr)}}
+  .case-img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:1.25rem;padding-bottom:1rem}
+  .case-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:8px;background:var(--warm)}
 
 </style>
 </head>
@@ -336,6 +325,12 @@ nav{
             <div class="big-metric"><div class="big-metric-num">Pan-India</div><div class="big-metric-label">National rollout</div></div>
             <div class="big-metric"><div class="big-metric-num">↑ Weekday</div><div class="big-metric-label">Orders for participating partners</div></div>
           </div>
+        </div>
+        <div class="case-img-grid">
+          <img src="ead-dish-1.jpg" alt="Desk-friendly dish" class="case-img"/>
+          <img src="ead-dish-2.jpg" alt="Rice bowl" class="case-img"/>
+          <img src="ead-dish-3.jpg" alt="Meal combo with kit" class="case-img"/>
+          <img src="ead-app-1.jpg" alt="Zomato app screenshot" class="case-img"/>
         </div>
       </div>
     </div>
@@ -497,14 +492,7 @@ nav{
       </div>
     </div>
   </div>
-    <div class="film-ph" id="filmPh">
-      <div class="film-ph-inner">
-        <div class="film-play">▶</div>
-        <p class="film-label">Film link coming soon</p>
-        <p class="film-sub">Share the link — becomes a live embed instantly</p>
-      </div>
-    </div>
-  </div>
+
 
 </div>
 </div>
