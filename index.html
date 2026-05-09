@@ -29,12 +29,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-hire{background:var(--yellow);color:var(--black);font-family:"Archivo Black",sans-serif;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;padding:8px 18px;border-radius:100px;text-decoration:none;transition:transform 0.15s}
 .nav-hire:hover{transform:scale(1.04)}
 
-/* HERO GRID FIX */
+/* --- HERO GRID & MEME FIX --- */
 .hero{min-height:auto;padding-top:52px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
 .hero-left{background:var(--yellow);padding:4rem 3rem 3rem;display:flex;flex-direction:column;justify-content:flex-start;position:relative}
+
 .hero-tag{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(0,0,0,0.45);margin-bottom:1.5rem;font-weight:500}
 
-/* MEME CARD STYLING */
 .hero-meme-card {
   margin: 10px 0 25px 0;
   max-width: 350px; 
@@ -56,7 +56,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hst-num{font-family:"Archivo Black",sans-serif;font-size:22px;line-height:1}
 .hst-label{font-size:11px;color:rgba(255,220,0,0.6);margin-top:2px}
 
-/* HERO RIGHT */
 .hero-right{background:var(--pink);display:flex;flex-direction:column;justify-content:flex-start;padding:2.5rem;position:relative;overflow:hidden;gap:1rem;max-height:850px}
 .hero-sticker-1{display:inline-block;background:var(--yellow);color:var(--black);font-family:"Archivo Black",sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px;border-radius:100px;transform:rotate(8deg);box-shadow:2px 3px 0 rgba(0,0,0,0.2);align-self:flex-end}
 .hero-slides-stack{display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;scrollbar-width:none;max-height:650px}
@@ -74,42 +73,79 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .pov-block{background:var(--black);color:white;padding:80px 2.5rem}
 .pov-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .pov-quote{font-family:"Caveat",cursive;font-size:clamp(28px,4vw,50px);line-height:1.3;color:var(--yellow)}
+.pov-quote em{font-style:normal;color:white}
 .pov-body{font-size:15px;line-height:1.85;color:rgba(255,255,255,0.5)}
 
-/* WORK */
+/* --- CASE STUDIES FULL --- */
 .section{padding:80px 2.5rem;max-width:1140px;margin:0 auto}
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;color:var(--ink);opacity:0.5;margin-bottom:1.2rem}
+.section-label::before{content:"";display:block;width:20px;height:2px;background:currentColor}
 .section-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:3rem}
+
 .work-grid{display:flex;flex-direction:column;gap:2px}
 .work-card{border-radius:14px;overflow:hidden;border:2px solid var(--black);transition:transform 0.2s;margin-bottom:2px}
 .work-card-trigger{display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:1.5rem;padding:1.5rem 2rem;background:none;border:none;width:100%;text-align:left;cursor:pointer}
-.work-card-num{font-family:"Archivo Black",sans-serif;font-size:42px;line-height:1;letter-spacing:-0.03em;color:rgba(0,0,0,0.1)}
-.work-card-title{font-family:"Archivo Black",sans-serif;font-size:clamp(15px,2vw,20px);line-height:1.2;color:var(--black)}
+.work-card-num{font-family:"Archivo Black",sans-serif;font-size:42px;line-height:1;letter-spacing:-0.03em}
+.work-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:7px}
+.wtag{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px}
+.wtag-pink{background:#ffe4ea;color:var(--pink)}
+.wtag-blue{background:#dce5ff;color:var(--blue)}
+.wtag-green{background:#d4f7e8;color:#007a4c}
+.wtag-orange{background:#ffe8d9;color:var(--orange)}
+.wtag-purple{background:#f0e4ff;color:var(--purple)}
+.work-card-title{font-family:"Archivo Black",sans-serif;font-size:clamp(15px,2vw,20px);line-height:1.2;color:var(--black);transition:color 0.2s}
+.work-card-right{display:flex;gap:1.5rem;align-items:center}
+.wmetric{text-align:right}
+.wmetric-num{font-family:"Archivo Black",sans-serif;font-size:20px;line-height:1;letter-spacing:-0.02em}
+.wmetric-label{font-size:10px;color:rgba(0,0,0,0.4);margin-top:1px}
+.wplus{font-family:"Archivo Black",sans-serif;font-size:26px;color:rgba(0,0,0,0.2);transition:color 0.25s,transform 0.25s;flex-shrink:0;margin-left:0.5rem}
+
 .work-card-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);background:white}
-.work-card.open .work-card-body{max-height:1000px}
+.work-card.open .work-card-body{max-height:1500px}
 .work-body-inner{display:grid;grid-template-columns:1fr 280px;gap:2rem;padding:1.5rem 2rem 2rem;border-top:2px solid rgba(0,0,0,0.06)}
+.work-body-text{font-size:14px;line-height:1.85;color:rgba(0,0,0,0.6)}
+.work-metrics{display:flex;flex-direction:column;gap:10px}
+.wm-pill{border-radius:10px;padding:12px 16px;border:2px solid rgba(0,0,0,0.06)}
+.wm-pill-num{font-family:"Archivo Black",sans-serif;font-size:24px;line-height:1}
+
+.wc1 .work-card-trigger{background:#fff8e7} .wc1 .wm-pill{background:#fff8e7} .wc1 .wmetric-num{color:var(--orange)}
+.wc2 .work-card-trigger{background:#e8fff4} .wc2 .wm-pill{background:#e8fff4} .wc2 .wmetric-num{color:var(--green)}
+.wc3 .work-card-trigger{background:#eef1ff} .wc3 .wm-pill{background:#eef1ff} .wc3 .wmetric-num{color:var(--blue)}
+.wc4 .work-card-trigger{background:#fff0f3} .wc4 .wm-pill{background:#fff0f3} .wc4 .wmetric-num{color:var(--pink)}
+.wc5 .work-card-trigger{background:#f5edff} .wc5 .wm-pill{background:#f5edff} .wc5 .wmetric-num{color:var(--purple)}
+
+.ead-img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:1.25rem;grid-column:1/-1}
+.ead-img-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;background:#eee;display:block}
 
 /* JOURNEY */
 .journey-bg{background:var(--black);padding:80px 0}
 .journey-inner{max-width:1140px;margin:0 auto;padding:0 2.5rem}
 .journey-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;color:var(--white);margin-bottom:3rem}
 .journey-card{background:#222;border-radius:14px;padding:1.75rem 2rem;display:grid;grid-template-columns:180px 1fr;gap:2rem;margin-bottom:10px;color:white}
+.journey-left{display:flex;flex-direction:column;gap:6px}
+.journey-period{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.j-badge{display:inline-block;padding:5px 12px;border-radius:6px;font-family:"Archivo Black",sans-serif;font-size:13px;border:1px solid rgba(255,255,255,0.1)}
+.j-zomato{background:#3d0a0e;color:#ff6b6b}
+.j-shreedhi{background:#0a2318;color:#4ade80}
+.j-christ{background:#1a0a0a;color:#f4a261}
 
 /* SIDEQUESTS */
 .sq-section{padding:80px 2.5rem;max-width:1140px;margin:0 auto}
-.sq-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:0.5rem}
-.personality-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:2rem}
-.p-card{border-radius:16px;padding:1.5rem 1.25rem;border:2px solid rgba(0,0,0,0.06);background:white}
+.sq-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:3rem}
+.personality-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.p-card{border-radius:16px;padding:1.5rem 1.25rem;border:2px solid rgba(0,0,0,0.06);transition:transform 0.2s}
+.p-card-yellow{background:#fff8e0} .p-card-pink{background:#fff0f3} .p-card-blue{background:#eef1ff} .p-card-green{background:#e8fff4}
 
 /* CONTACT */
 .contact-block{background:var(--yellow);padding:90px 2.5rem;text-align:center}
-.contact-title{font-family:"Archivo Black",sans-serif;font-size:clamp(48px,9vw,110px);line-height:0.88;letter-spacing:-0.03em;color:var(--black);margin-bottom:1.5rem}
+.contact-title{font-family:"Archivo Black",sans-serif;font-size:clamp(48px,9vw,110px);line-height:0.88;letter-spacing:-0.03em;color:var(--black);margin-bottom:2rem}
 
 @media(max-width:768px){
   .hero{grid-template-columns:1fr}
   .hero-right{display:none}
-  .personality-inner{grid-template-columns:repeat(2,1fr)}
   .journey-card{grid-template-columns:1fr}
+  .personality-inner{grid-template-columns:repeat(2,1fr)}
+  .work-body-inner{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -138,9 +174,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <div class="hero-disclaimer">✕ Not the jewellery brand</div>
     <p class="hero-tagline">I help brands figure out <strong>what they're actually selling</strong> — then help the world understand it.</p>
     <div class="hero-stats-row">
-      <div class="hst"><div class="hst-num">18%</div><div class="hst-label">Order growth</div></div>
-      <div class="hst"><div class="hst-num">4.3×</div><div class="hst-label">ROI</div></div>
-      <div class="hst"><div class="hst-num">30K+</div><div class="hst-label">Farmers</div></div>
+      <div class="hst"><div class="hst-num">18%</div><div class="hst-label">Order volume growth</div></div>
+      <div class="hst"><div class="hst-num">4.3×</div><div class="hst-label">ROI vs 2.8× city avg</div></div>
+      <div class="hst"><div class="hst-num">30K+</div><div class="hst-label">Farmers reached</div></div>
     </div>
   </div>
   <div class="hero-right">
@@ -155,14 +191,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 <div class="marquee-belt">
   <div class="marquee-inner">
-    <span>Brand Strategy</span><span class="acc">✦</span><span>Consumer Insight</span><span class="acc">✦</span><span>Growth Strategy</span><span class="acc">✦</span><span>Storytelling</span><span class="acc">✦</span><span>SKU Architecture</span><span class="acc">✦</span><span>Brand Strategy</span><span class="acc">✦</span><span>Consumer Insight</span><span class="acc">✦</span><span>Growth Strategy</span><span class="acc">✦</span><span>Storytelling</span><span class="acc">✦</span><span>SKU Architecture</span><span class="acc">✦</span>
+    <span>Brand Strategy</span><span class="acc">✦</span><span>Consumer Insight</span><span class="acc">✦</span><span>SKU Architecture</span><span class="acc">✦</span><span>Performance Marketing</span><span class="acc">✦</span><span>Storytelling</span><span class="acc">✦</span><span>Growth Strategy</span><span class="acc">✦</span><span>Rural Marketing</span><span class="acc">✦</span>
   </div>
 </div>
 
 <div class="pov-block">
   <div class="pov-inner">
     <p class="pov-quote">"The most important question is <em>what is the right question.</em>"</p>
-    <p class="pov-body">Before saying anything to the world about a brand, I make sure the brand knows what it's saying — and why. That's not strategy. That's just asking the questions nobody else bothered to ask.</p>
+    <p class="pov-body">Most brand problems exist because the sender doesn't know what they want to convey. Before saying anything to the world about a brand, I make sure the brand knows what it's saying — and why.</p>
   </div>
 </div>
 
@@ -170,46 +206,170 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <div class="section-label">The Work</div>
   <h2 class="section-title">CASE STUDIES</h2>
   <div class="work-grid">
-    <div class="work-card reveal">
+
+    <div class="work-card wc1 reveal">
       <button class="work-card-trigger" onclick="toggleCard(this)">
         <div class="work-card-num">01</div>
-        <div class="work-card-title">Took a struggling restaurant from ₹3L to ₹18L/month</div>
-        <div class="wplus">+</div>
+        <div class="work-card-mid">
+          <div class="work-tags"><span class="wtag wtag-orange">Brand Building</span><span class="wtag wtag-blue">Zomato</span></div>
+          <div class="work-card-title">Took a struggling restaurant from ₹3L to ₹18L/month</div>
+        </div>
+        <div class="work-card-right">
+          <div class="wmetric"><div class="wmetric-num">₹3L→₹18L</div><div class="wmetric-label">7 months</div></div>
+          <div class="wplus">+</div>
+        </div>
       </button>
-      <div class="work-card-body"><div class="work-body-inner">Fixed the identity first. Sharpened the menu, ran performance marketing, and used data to improve retention. Grew to ₹18L by month 7.</div></div>
+      <div class="work-card-body">
+        <div class="work-body-inner">
+          <div class="work-body-text">Fixed the basics first — helped them figure out who they are, sharpened the menu to match that story. Used data to improve conversion and retention. Grew sustainably with healthy margins.</div>
+          <div class="work-metrics">
+            <div class="wm-pill"><div class="wm-pill-num">₹3L → ₹18L</div><div class="wm-pill-label">Monthly revenue growth</div></div>
+            <div class="wm-pill"><div class="wm-pill-num">Zero drop</div><div class="wm-pill-label">In orders after price hike</div></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="work-card reveal">
+
+    <div class="work-card wc2 reveal">
       <button class="work-card-trigger" onclick="toggleCard(this)">
         <div class="work-card-num">02</div>
-        <div class="work-card-title">Solved 'Eat at Desk' — then rolled it out pan-India</div>
+        <div class="work-card-mid">
+          <div class="work-tags"><span class="wtag wtag-green">SKU Strategy</span><span class="wtag wtag-blue">Zomato · National</span></div>
+          <div class="work-card-title">Solved Eat-at-Desk — then rolled it out pan-India</div>
+        </div>
+        <div class="work-card-right">
+          <div class="wmetric"><div class="wmetric-num">5%→25%</div><div class="wmetric-label">Bowl share</div></div>
+          <div class="wplus">+</div>
+        </div>
+      </button>
+      <div class="work-card-body">
+        <div class="work-body-inner">
+          <div>
+            <div class="work-body-text">The insight was personal — I'd order food at work and never know if I could eat it without a mess. My SKU contribution: rice bowls and meal combos adjusted for office desk clutter. Rolled out nationally.</div>
+            <div class="ead-img-grid">
+              <img src="ead-dish-1.jpg" alt="Dish 1"><img src="ead-dish-2.jpg" alt="Dish 2"><img src="ead-dish-3.jpg" alt="Dish 3"><img src="ead-app-1.jpg" alt="App">
+            </div>
+          </div>
+          <div class="work-metrics">
+            <div class="wm-pill"><div class="wm-pill-num">5% → 25%</div><div class="wm-pill-label">Bowl/thali share for partners</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card wc3 reveal">
+      <button class="work-card-trigger" onclick="toggleCard(this)">
+        <div class="work-card-num">03</div>
+        <div class="work-card-mid">
+          <div class="work-tags"><span class="wtag wtag-blue">Repositioning</span><span class="wtag wtag-blue">Zomato</span></div>
+          <div class="work-card-title">One restaurant → three brands that actually worked</div>
+        </div>
         <div class="wplus">+</div>
       </button>
-      <div class="work-card-body"><div class="work-body-inner">Designed rice bowls and meal combos that traveled well and solved cluttered desk eating. Rolled out nationally.</div></div>
+      <div class="work-card-body">
+        <div class="work-body-inner">
+          <div class="work-body-text">Split a multicuisine restaurant happy at breakeven into focused cloud kitchens. The specialized Asian kitchen alone outperformed the original restaurant's last month in its first month.</div>
+          <div class="work-metrics">
+            <div class="wm-pill"><div class="wm-pill-num">1 → 3</div><div class="wm-pill-label">Focused brands created</div></div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="work-card wc4 reveal">
+      <button class="work-card-trigger" onclick="toggleCard(this)">
+        <div class="work-card-num">04</div>
+        <div class="work-card-mid">
+          <div class="work-tags"><span class="wtag wtag-pink">Performance Marketing</span><span class="wtag wtag-blue">Zomato</span></div>
+          <div class="work-card-title">50% better ROI than city average</div>
+        </div>
+        <div class="wplus">+</div>
+      </button>
+      <div class="work-card-body">
+        <div class="work-body-inner">
+          <div class="work-body-text">Stopped pitching impressions, started pitching 9-month roadmaps. Closed ₹20–30L monthly while maintaining a 4.3× ROI vs the 2.8× city average.</div>
+          <div class="work-metrics">
+            <div class="wm-pill"><div class="wm-pill-num">4.3× ROI</div><div class="wm-pill-label">vs 2.8× city average</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card wc5 reveal">
+      <button class="work-card-trigger" onclick="toggleCard(this)">
+        <div class="work-card-num">05</div>
+        <div class="work-card-mid">
+          <div class="work-tags"><span class="wtag wtag-purple">Grassroots</span><span class="wtag wtag-purple">Shreedhi</span></div>
+          <div class="work-card-title">Built trust with 30,000 farmers. No shortcuts.</div>
+        </div>
+        <div class="wplus">+</div>
+      </button>
+      <div class="work-card-body">
+        <div class="work-body-inner">
+          <div class="work-body-text">Replaced jargon with examples from their own lives. Designed a payment model where costs were deducted from milk procurement — removed upfront risk entirely.</div>
+          <div class="work-metrics">
+            <div class="wm-pill"><div class="wm-pill-num">30,000+</div><div class="wm-pill-label">Dairy farmers engaged</div></div>
+            <div class="wm-pill"><div class="wm-pill-num">₹0</div><div class="wm-pill-label">Ad spend</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <div class="journey-bg" id="journey">
   <div class="journey-inner">
     <h2 class="journey-title">THE <span>JOURNEY</span></h2>
-    <div class="journey-card"><div><strong>Jul 2025 – Present</strong><br>Generalist at Shreedhi</div><div>Expanding veterinary care to 30,000+ farmers. Built a payment model that removed financial friction.</div></div>
-    <div class="journey-card"><div><strong>Dec 2023 – Jul 2025</strong><br>KAM at Zomato</div><div>Managed 200+ partners. 18% order growth. Mentored 15 KAMs.</div></div>
+    <div class="journey-card">
+      <div class="journey-left">
+        <div class="journey-period">Jul 2025 – Present</div>
+        <span class="j-badge j-shreedhi">Shreedhi</span>
+      </div>
+      <div>
+        <div class="journey-role">Generalist</div>
+        <div class="journey-desc">Expanding veterinary care to 500+ villages, 30,000+ dairy farmers. Built a friction-free payment model.</div>
+      </div>
+    </div>
+    <div class="journey-card">
+      <div class="journey-left">
+        <div class="journey-period">Dec 2023 – Jul 2025</div>
+        <span class="j-badge j-zomato">Zomato</span>
+      </div>
+      <div>
+        <div class="journey-role">Key Accounts Manager</div>
+        <div class="journey-desc">Managed 200+ partners. 18% order growth. Mentored 15 KAMs.</div>
+      </div>
+    </div>
+    <div class="journey-card">
+      <div class="journey-left">
+        <div class="journey-period">2020 – 2023</div>
+        <span class="j-badge j-christ">Christ Uni</span>
+      </div>
+      <div>
+        <div class="journey-role">BBA — Finance & IB</div>
+        <div class="journey-desc">Founding member of iBiz. Captained football & cricket. Built the foundations before knowing what to call them.</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <section class="sq-section" id="sidequests">
   <h2 class="sq-title">SIDE<span>QUESTS</span></h2>
   <div class="personality-inner">
-    <div class="p-card">🎯 <strong>Meme Expert</strong><br>10/10 for a good laugh. Ask anyone.</div>
-    <div class="p-card">🎬 <strong>Pop-Culture</strong><br>Drops references like it's a habit.</div>
-    <div class="p-card">💡 <strong>Straight Talk</strong><br>Says what everyone is already thinking.</div>
-    <div class="p-card">🎭 <strong>Wit</strong><br>Wit + misdirection = his love language.</div>
+    <div class="p-card p-card-yellow">🎯 <strong>Meme Expert</strong><br>10/10 for a good laugh.</div>
+    <div class="p-card p-card-pink">🎬 <strong>Pop-Culture</strong><br>Drops references habit.</div>
+    <div class="p-card p-card-blue">💡 <strong>Straight Talk</strong><br>Says what everyone thinks.</div>
+    <div class="p-card p-card-green">🎭 <strong>Wit</strong><br>Wit + misdirection = his love language.</div>
   </div>
 </section>
 
 <div class="contact-block" id="contact">
   <h2 class="contact-title">LET'S BUILD<br><span>SOMETHING.</span></h2>
-  <p><a href="mailto:jaintanishq79@gmail.com" style="color:black; font-weight:bold;">jaintanishq79@gmail.com</a></p>
+  <div class="contact-btns">
+    <a href="mailto:jaintanishq79@gmail.com" style="background:black; color:yellow; padding:15px 30px; border-radius:100px; text-decoration:none; font-weight:bold;">jaintanishq79@gmail.com</a>
+  </div>
+  <p style="margin-top:20px; font-size:12px; color:rgba(0,0,0,0.4);">+91 99934 31111 · Bhopal · Not the jewellery brand.</p>
 </div>
 
 <script>
