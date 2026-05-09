@@ -31,21 +31,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* HERO GRID FIX */
 .hero{min-height:auto;padding-top:52px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
-.hero-left{background:var(--yellow);padding:4rem 3rem;display:flex;flex-direction:column;justify-content:flex-start;position:relative}
-
+.hero-left{background:var(--yellow);padding:4rem 3rem 3rem;display:flex;flex-direction:column;justify-content:flex-start;position:relative}
 .hero-tag{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(0,0,0,0.45);margin-bottom:1.5rem;font-weight:500}
-.hero-name{font-family:"Archivo Black",sans-serif;font-size:clamp(52px,7vw,88px);line-height:0.92;letter-spacing:-0.03em;color:var(--black);margin-bottom:1rem}
-.hero-disclaimer{display:inline-block;background:var(--black);color:var(--yellow);font-size:12px;font-weight:600;letter-spacing:0.06em;padding:6px 14px;border-radius:100px;margin-bottom:2rem}
-.hero-tagline{font-family:"Caveat",cursive;font-size:clamp(22px,3vw,30px);line-height:1.35;color:var(--black);max-width:400px;margin-bottom:2.5rem}
-.hero-tagline strong{font-weight:700}
-.hero-stats-row{display:flex;gap:1.5rem;flex-wrap:wrap}
-.hst{background:var(--black);color:var(--yellow);border-radius:12px;padding:12px 18px}
-.hst-num{font-family:"Archivo Black",sans-serif;font-size:22px;line-height:1}
-.hst-label{font-size:11px;color:rgba(255,220,0,0.6);margin-top:2px}
 
 /* MEME CARD STYLING */
 .hero-meme-card {
-  margin: 15px 0 25px 0;
+  margin: 10px 0 25px 0;
   max-width: 350px; 
   border: 3px solid var(--black);
   border-radius: 4px;
@@ -56,53 +47,69 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 }
 .hero-meme-img { width: 100%; height: auto; display: block; }
 
-/* HERO RIGHT FIX */
+.hero-name{font-family:"Archivo Black",sans-serif;font-size:clamp(52px,7vw,88px);line-height:0.92;letter-spacing:-0.03em;color:var(--black);margin-bottom:1rem}
+.hero-disclaimer{display:inline-block;background:var(--black);color:var(--yellow);font-size:12px;font-weight:600;letter-spacing:0.06em;padding:6px 14px;border-radius:100px;margin-bottom:2rem}
+.hero-tagline{font-family:"Caveat",cursive;font-size:clamp(22px,3vw,30px);line-height:1.35;color:var(--black);max-width:400px;margin-bottom:2.5rem}
+.hero-tagline strong{font-weight:700}
+.hero-stats-row{display:flex;gap:1.5rem;flex-wrap:wrap}
+.hst{background:var(--black);color:var(--yellow);border-radius:12px;padding:12px 18px}
+.hst-num{font-family:"Archivo Black",sans-serif;font-size:22px;line-height:1}
+.hst-label{font-size:11px;color:rgba(255,220,0,0.6);margin-top:2px}
+
+/* HERO RIGHT */
 .hero-right{background:var(--pink);display:flex;flex-direction:column;justify-content:flex-start;padding:2.5rem;position:relative;overflow:hidden;gap:1rem;max-height:850px}
 .hero-sticker-1{display:inline-block;background:var(--yellow);color:var(--black);font-family:"Archivo Black",sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px;border-radius:100px;transform:rotate(8deg);box-shadow:2px 3px 0 rgba(0,0,0,0.2);align-self:flex-end}
 .hero-slides-stack{display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;scrollbar-width:none;max-height:650px}
 .hero-canva-slide{border:3px solid white;border-radius:10px;overflow:hidden;box-shadow:3px 5px 20px rgba(0,0,0,0.2);background:rgba(255,255,255,0.15);position:relative;flex-shrink:0}
 .hero-canva-slide img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
 
-/* MARQUEE & REST */
+/* MARQUEE */
 .marquee-belt{background:var(--black);overflow:hidden;padding:13px 0;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow)}
 .marquee-inner{display:flex;white-space:nowrap;animation:mscroll 20s linear infinite}
 .marquee-inner span{font-family:"Archivo Black",sans-serif;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:0 1.5rem;flex-shrink:0}
 .marquee-inner span.acc{color:var(--yellow)}
 @keyframes mscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* POV */
 .pov-block{background:var(--black);color:white;padding:80px 2.5rem}
 .pov-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .pov-quote{font-family:"Caveat",cursive;font-size:clamp(28px,4vw,50px);line-height:1.3;color:var(--yellow)}
 .pov-body{font-size:15px;line-height:1.85;color:rgba(255,255,255,0.5)}
 
+/* WORK */
 .section{padding:80px 2.5rem;max-width:1140px;margin:0 auto}
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;color:var(--ink);opacity:0.5;margin-bottom:1.2rem}
 .section-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:3rem}
-
 .work-grid{display:flex;flex-direction:column;gap:2px}
 .work-card{border-radius:14px;overflow:hidden;border:2px solid var(--black);transition:transform 0.2s;margin-bottom:2px}
 .work-card-trigger{display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:1.5rem;padding:1.5rem 2rem;background:none;border:none;width:100%;text-align:left;cursor:pointer}
 .work-card-num{font-family:"Archivo Black",sans-serif;font-size:42px;line-height:1;letter-spacing:-0.03em;color:rgba(0,0,0,0.1)}
 .work-card-title{font-family:"Archivo Black",sans-serif;font-size:clamp(15px,2vw,20px);line-height:1.2;color:var(--black)}
+.work-card-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);background:white}
+.work-card.open .work-card-body{max-height:1000px}
+.work-body-inner{display:grid;grid-template-columns:1fr 280px;gap:2rem;padding:1.5rem 2rem 2rem;border-top:2px solid rgba(0,0,0,0.06)}
 
+/* JOURNEY */
 .journey-bg{background:var(--black);padding:80px 0}
 .journey-inner{max-width:1140px;margin:0 auto;padding:0 2.5rem}
 .journey-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;color:var(--white);margin-bottom:3rem}
-.journey-card{background:#222;border-radius:14px;padding:1.75rem 2rem;display:grid;grid-template-columns:180px 1fr;gap:2rem;margin-bottom:10px}
+.journey-card{background:#222;border-radius:14px;padding:1.75rem 2rem;display:grid;grid-template-columns:180px 1fr;gap:2rem;margin-bottom:10px;color:white}
 
+/* SIDEQUESTS */
 .sq-section{padding:80px 2.5rem;max-width:1140px;margin:0 auto}
 .sq-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:0.5rem}
+.personality-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:2rem}
+.p-card{border-radius:16px;padding:1.5rem 1.25rem;border:2px solid rgba(0,0,0,0.06);background:white}
 
-.personality-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:2.5rem}
-.p-card{border-radius:16px;padding:1.5rem 1.25rem;border:2px solid rgba(0,0,0,0.06);background:var(--white)}
-
+/* CONTACT */
 .contact-block{background:var(--yellow);padding:90px 2.5rem;text-align:center}
-.contact-title{font-family:"Archivo Black",sans-serif;font-size:clamp(48px,9vw,110px);line-height:0.88;letter-spacing:-0.03em;color:var(--black)}
+.contact-title{font-family:"Archivo Black",sans-serif;font-size:clamp(48px,9vw,110px);line-height:0.88;letter-spacing:-0.03em;color:var(--black);margin-bottom:1.5rem}
 
 @media(max-width:768px){
   .hero{grid-template-columns:1fr}
   .hero-right{display:none}
   .personality-inner{grid-template-columns:repeat(2,1fr)}
+  .journey-card{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -124,22 +131,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 <div class="hero">
   <div class="hero-left">
     <p class="hero-tag">Brand Strategist · India · Open to work</p>
-    
     <div class="hero-meme-card">
       <img src="D9C7FD7D-7FBB-486B-B3C0-EC34E215F68D.jpg" alt="Chak De India Meme" class="hero-meme-img">
     </div>
-
     <h1 class="hero-name">TANISHQ<br>JAIN.</h1>
     <div class="hero-disclaimer">✕ Not the jewellery brand</div>
     <p class="hero-tagline">I help brands figure out <strong>what they're actually selling</strong> — then help the world understand it.</p>
-    
     <div class="hero-stats-row">
       <div class="hst"><div class="hst-num">18%</div><div class="hst-label">Order growth</div></div>
       <div class="hst"><div class="hst-num">4.3×</div><div class="hst-label">ROI</div></div>
       <div class="hst"><div class="hst-num">30K+</div><div class="hst-label">Farmers</div></div>
     </div>
   </div>
-
   <div class="hero-right">
     <div class="hero-sticker-1">Open to work ✦</div>
     <div class="hero-slides-stack">
@@ -150,12 +153,75 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   </div>
 </div>
 
+<div class="marquee-belt">
+  <div class="marquee-inner">
+    <span>Brand Strategy</span><span class="acc">✦</span><span>Consumer Insight</span><span class="acc">✦</span><span>Growth Strategy</span><span class="acc">✦</span><span>Storytelling</span><span class="acc">✦</span><span>SKU Architecture</span><span class="acc">✦</span><span>Brand Strategy</span><span class="acc">✦</span><span>Consumer Insight</span><span class="acc">✦</span><span>Growth Strategy</span><span class="acc">✦</span><span>Storytelling</span><span class="acc">✦</span><span>SKU Architecture</span><span class="acc">✦</span>
+  </div>
+</div>
+
+<div class="pov-block">
+  <div class="pov-inner">
+    <p class="pov-quote">"The most important question is <em>what is the right question.</em>"</p>
+    <p class="pov-body">Before saying anything to the world about a brand, I make sure the brand knows what it's saying — and why. That's not strategy. That's just asking the questions nobody else bothered to ask.</p>
+  </div>
+</div>
+
+<section class="section" id="work">
+  <div class="section-label">The Work</div>
+  <h2 class="section-title">CASE STUDIES</h2>
+  <div class="work-grid">
+    <div class="work-card reveal">
+      <button class="work-card-trigger" onclick="toggleCard(this)">
+        <div class="work-card-num">01</div>
+        <div class="work-card-title">Took a struggling restaurant from ₹3L to ₹18L/month</div>
+        <div class="wplus">+</div>
+      </button>
+      <div class="work-card-body"><div class="work-body-inner">Fixed the identity first. Sharpened the menu, ran performance marketing, and used data to improve retention. Grew to ₹18L by month 7.</div></div>
+    </div>
+    <div class="work-card reveal">
+      <button class="work-card-trigger" onclick="toggleCard(this)">
+        <div class="work-card-num">02</div>
+        <div class="work-card-title">Solved 'Eat at Desk' — then rolled it out pan-India</div>
+        <div class="wplus">+</div>
+      </button>
+      <div class="work-card-body"><div class="work-body-inner">Designed rice bowls and meal combos that traveled well and solved cluttered desk eating. Rolled out nationally.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="journey-bg" id="journey">
+  <div class="journey-inner">
+    <h2 class="journey-title">THE <span>JOURNEY</span></h2>
+    <div class="journey-card"><div><strong>Jul 2025 – Present</strong><br>Generalist at Shreedhi</div><div>Expanding veterinary care to 30,000+ farmers. Built a payment model that removed financial friction.</div></div>
+    <div class="journey-card"><div><strong>Dec 2023 – Jul 2025</strong><br>KAM at Zomato</div><div>Managed 200+ partners. 18% order growth. Mentored 15 KAMs.</div></div>
+  </div>
+</div>
+
+<section class="sq-section" id="sidequests">
+  <h2 class="sq-title">SIDE<span>QUESTS</span></h2>
+  <div class="personality-inner">
+    <div class="p-card">🎯 <strong>Meme Expert</strong><br>10/10 for a good laugh. Ask anyone.</div>
+    <div class="p-card">🎬 <strong>Pop-Culture</strong><br>Drops references like it's a habit.</div>
+    <div class="p-card">💡 <strong>Straight Talk</strong><br>Says what everyone is already thinking.</div>
+    <div class="p-card">🎭 <strong>Wit</strong><br>Wit + misdirection = his love language.</div>
+  </div>
+</section>
+
+<div class="contact-block" id="contact">
+  <h2 class="contact-title">LET'S BUILD<br><span>SOMETHING.</span></h2>
+  <p><a href="mailto:jaintanishq79@gmail.com" style="color:black; font-weight:bold;">jaintanishq79@gmail.com</a></p>
+</div>
+
 <script>
 const dot = document.getElementById("cursorDot");
 document.addEventListener("mousemove", e => {
   dot.style.left = e.clientX + "px";
   dot.style.top = e.clientY + "px";
 });
+function toggleCard(btn) {
+  const card = btn.closest(".work-card");
+  card.classList.toggle("open");
+}
 </script>
 </body>
 </html>
