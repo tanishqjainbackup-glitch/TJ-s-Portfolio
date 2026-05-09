@@ -29,13 +29,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-hire{background:var(--yellow);color:var(--black);font-family:"Archivo Black",sans-serif;font-size:12px;letter-spacing:0.05em;text-transform:uppercase;padding:8px 18px;border-radius:100px;text-decoration:none;transition:transform 0.15s}
 .nav-hire:hover{transform:scale(1.04)}
 
-/* HERO */
-.hero{min-height:100vh;padding-top:52px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
-.hero-left{background:var(--yellow);padding:4rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center;position:relative}
+/* HERO GRID FIX */
+.hero{min-height:auto;padding-top:52px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{background:var(--yellow);padding:4rem 3rem;display:flex;flex-direction:column;justify-content:flex-start;position:relative}
+
 .hero-tag{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(0,0,0,0.45);margin-bottom:1.5rem;font-weight:500}
 .hero-name{font-family:"Archivo Black",sans-serif;font-size:clamp(52px,7vw,88px);line-height:0.92;letter-spacing:-0.03em;color:var(--black);margin-bottom:1rem}
-.hero-name .crossed{position:relative;display:inline-block;color:rgba(0,0,0,0.25)}
-.hero-name .crossed::after{content:"";position:absolute;left:-3px;right:-3px;top:46%;height:6px;background:var(--pink);border-radius:2px;transform:rotate(-2deg)}
 .hero-disclaimer{display:inline-block;background:var(--black);color:var(--yellow);font-size:12px;font-weight:600;letter-spacing:0.06em;padding:6px 14px;border-radius:100px;margin-bottom:2rem}
 .hero-tagline{font-family:"Caveat",cursive;font-size:clamp(22px,3vw,30px);line-height:1.35;color:var(--black);max-width:400px;margin-bottom:2.5rem}
 .hero-tagline strong{font-weight:700}
@@ -44,216 +43,66 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hst-num{font-family:"Archivo Black",sans-serif;font-size:22px;line-height:1}
 .hst-label{font-size:11px;color:rgba(255,220,0,0.6);margin-top:2px}
 
-/* HERO RIGHT - stacked slides */
-.hero-right{background:var(--pink);display:flex;flex-direction:column;justify-content:flex-start;padding:2.5rem 2.5rem 2rem;position:relative;overflow:hidden;gap:1rem}
+/* MEME CARD STYLING */
+.hero-meme-card {
+  margin: 15px 0 25px 0;
+  max-width: 350px; 
+  border: 3px solid var(--black);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 6px 6px 0 var(--black);
+  transform: rotate(-1.5deg);
+  background: var(--black);
+}
+.hero-meme-img { width: 100%; height: auto; display: block; }
+
+/* HERO RIGHT FIX */
+.hero-right{background:var(--pink);display:flex;flex-direction:column;justify-content:flex-start;padding:2.5rem;position:relative;overflow:hidden;gap:1rem;max-height:850px}
 .hero-sticker-1{display:inline-block;background:var(--yellow);color:var(--black);font-family:"Archivo Black",sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px;border-radius:100px;transform:rotate(8deg);box-shadow:2px 3px 0 rgba(0,0,0,0.2);align-self:flex-end}
-.hero-slides-stack{display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;scrollbar-width:none}
-.hero-slides-stack::-webkit-scrollbar{display:none}
+.hero-slides-stack{display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;scrollbar-width:none;max-height:650px}
 .hero-canva-slide{border:3px solid white;border-radius:10px;overflow:hidden;box-shadow:3px 5px 20px rgba(0,0,0,0.2);background:rgba(255,255,255,0.15);position:relative;flex-shrink:0}
 .hero-canva-slide img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
-.hero-canva-slide.placeholder img{display:none}
-.hero-canva-slide.placeholder{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
-.slide-ph-text{display:none;font-family:"Caveat",cursive;font-size:15px;color:rgba(255,255,255,0.6);text-align:center;padding:1rem}
-.hero-canva-slide.placeholder .slide-ph-text{display:block}
-.hcs1{transform:rotate(-0.8deg)}
-.hcs2{transform:rotate(0.5deg)}
-.hcs3{transform:rotate(-0.4deg)}
-.hero-scroll-hint{font-family:"Caveat",cursive;font-size:17px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px;align-self:flex-end;margin-top:auto}
-.hero-scroll-hint::after{content:"↓";font-size:20px;color:white;animation:bounce 1.5s ease-in-out infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
-/* MARQUEE */
+/* MARQUEE & REST */
 .marquee-belt{background:var(--black);overflow:hidden;padding:13px 0;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow)}
 .marquee-inner{display:flex;white-space:nowrap;animation:mscroll 20s linear infinite}
 .marquee-inner span{font-family:"Archivo Black",sans-serif;font-size:15px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4);padding:0 1.5rem;flex-shrink:0}
 .marquee-inner span.acc{color:var(--yellow)}
 @keyframes mscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* POV */
 .pov-block{background:var(--black);color:white;padding:80px 2.5rem}
 .pov-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .pov-quote{font-family:"Caveat",cursive;font-size:clamp(28px,4vw,50px);line-height:1.3;color:var(--yellow)}
-.pov-quote em{font-style:normal;color:white}
 .pov-body{font-size:15px;line-height:1.85;color:rgba(255,255,255,0.5)}
 
-/* SECTION */
 .section{padding:80px 2.5rem;max-width:1140px;margin:0 auto}
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;color:var(--ink);opacity:0.5;margin-bottom:1.2rem}
-.section-label::before{content:"";display:block;width:20px;height:2px;background:currentColor}
 .section-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:3rem}
 
-/* WORK CARDS */
 .work-grid{display:flex;flex-direction:column;gap:2px}
 .work-card{border-radius:14px;overflow:hidden;border:2px solid var(--black);transition:transform 0.2s;margin-bottom:2px}
-.work-card:hover{transform:translateY(-2px)}
 .work-card-trigger{display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:1.5rem;padding:1.5rem 2rem;background:none;border:none;width:100%;text-align:left;cursor:pointer}
-.work-card-num{font-family:"Archivo Black",sans-serif;font-size:42px;line-height:1;letter-spacing:-0.03em}
-.work-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:7px}
-.wtag{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px}
-.wtag-pink{background:#ffe4ea;color:var(--pink)}
-.wtag-blue{background:#dce5ff;color:var(--blue)}
-.wtag-green{background:#d4f7e8;color:#007a4c}
-.wtag-orange{background:#ffe8d9;color:var(--orange)}
-.wtag-purple{background:#f0e4ff;color:var(--purple)}
-.work-card-title{font-family:"Archivo Black",sans-serif;font-size:clamp(15px,2vw,20px);line-height:1.2;color:var(--black);transition:color 0.2s}
-.work-card:hover .work-card-title{color:var(--pink)}
-.work-card-right{display:flex;gap:1.5rem;align-items:center}
-.wmetric{text-align:right}
-.wmetric-num{font-family:"Archivo Black",sans-serif;font-size:20px;line-height:1;letter-spacing:-0.02em}
-.wmetric-label{font-size:10px;color:rgba(0,0,0,0.4);margin-top:1px}
-.wplus{font-family:"Archivo Black",sans-serif;font-size:26px;color:rgba(0,0,0,0.2);transition:color 0.25s,transform 0.25s;flex-shrink:0;margin-left:0.5rem}
-.work-card.open .wplus{color:var(--pink);transform:rotate(45deg)}
-.work-card:hover .wplus{color:var(--pink)}
+.work-card-num{font-family:"Archivo Black",sans-serif;font-size:42px;line-height:1;letter-spacing:-0.03em;color:rgba(0,0,0,0.1)}
+.work-card-title{font-family:"Archivo Black",sans-serif;font-size:clamp(15px,2vw,20px);line-height:1.2;color:var(--black)}
 
-.wc1 .work-card-trigger{background:#fff8e7} .wc1 .work-card-num{color:rgba(255,180,0,0.2)} .wc1 .wmetric-num{color:var(--orange)}
-.wc2 .work-card-trigger{background:#e8fff4} .wc2 .work-card-num{color:rgba(0,195,122,0.15)} .wc2 .wmetric-num{color:var(--green)}
-.wc3 .work-card-trigger{background:#eef1ff} .wc3 .work-card-num{color:rgba(59,91,255,0.12)} .wc3 .wmetric-num{color:var(--blue)}
-.wc4 .work-card-trigger{background:#fff0f3} .wc4 .work-card-num{color:rgba(255,60,95,0.12)} .wc4 .wmetric-num{color:var(--pink)}
-.wc5 .work-card-trigger{background:#f5edff} .wc5 .work-card-num{color:rgba(168,85,247,0.12)} .wc5 .wmetric-num{color:var(--purple)}
-
-.work-card-body{max-height:0;overflow:hidden;transition:max-height 0.45s cubic-bezier(0.4,0,0.2,1);background:white}
-.work-card.open .work-card-body{max-height:1000px}
-.work-body-inner{display:grid;grid-template-columns:1fr 280px;gap:2rem;padding:1.5rem 2rem 2rem;border-top:2px solid rgba(0,0,0,0.06)}
-.work-body-text{font-size:14px;line-height:1.85;color:rgba(0,0,0,0.6)}
-.work-metrics{display:flex;flex-direction:column;gap:10px}
-.wm-pill{border-radius:10px;padding:12px 16px;border:2px solid rgba(0,0,0,0.06)}
-.wm-pill-num{font-family:"Archivo Black",sans-serif;font-size:24px;line-height:1;letter-spacing:-0.02em}
-.wm-pill-label{font-size:12px;color:rgba(0,0,0,0.4);margin-top:2px}
-.wc1 .wm-pill{background:#fff8e7} .wc1 .wm-pill-num{color:var(--orange)}
-.wc2 .wm-pill{background:#e8fff4} .wc2 .wm-pill-num{color:var(--green)}
-.wc3 .wm-pill{background:#eef1ff} .wc3 .wm-pill-num{color:var(--blue)}
-.wc4 .wm-pill{background:#fff0f3} .wc4 .wm-pill-num{color:var(--pink)}
-.wc5 .wm-pill{background:#f5edff} .wc5 .wm-pill-num{color:var(--purple)}
-
-.ead-img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:1.25rem;grid-column:1/-1}
-.ead-img-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;background:#eee;display:block}
-
-/* JOURNEY */
 .journey-bg{background:var(--black);padding:80px 0}
 .journey-inner{max-width:1140px;margin:0 auto;padding:0 2.5rem}
 .journey-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;color:var(--white);margin-bottom:3rem}
-.journey-title span{color:var(--yellow)}
-.journey-cards{display:flex;flex-direction:column;gap:2px}
-.journey-card{background:#222;border-radius:14px;padding:1.75rem 2rem;display:grid;grid-template-columns:180px 1fr;gap:2rem;align-items:start;border:1px solid rgba(255,255,255,0.06);transition:background 0.2s}
-.journey-card:hover{background:#2a2a2a}
-.journey-left{display:flex;flex-direction:column;gap:6px}
-.journey-period{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
-.j-logo{width:100px;height:36px;object-fit:contain;border-radius:6px;display:block;background:white;padding:4px 8px}
-.j-badge{display:inline-block;padding:5px 12px;border-radius:6px;font-family:"Archivo Black",sans-serif;font-size:13px;border:1px solid rgba(255,255,255,0.1)}
-.j-zomato{background:#3d0a0e;color:#ff6b6b;border-color:#ff6b6b33}
-.j-shreedhi{background:#0a2318;color:#4ade80;border-color:#4ade8033}
-.j-christ{background:#1a0a0a;color:#f4a261;border-color:#f4a26133}
-.journey-role{font-family:"Archivo Black",sans-serif;font-size:18px;color:white;margin-bottom:4px}
-.journey-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.75}
+.journey-card{background:#222;border-radius:14px;padding:1.75rem 2rem;display:grid;grid-template-columns:180px 1fr;gap:2rem;margin-bottom:10px}
 
-/* SIDEQUESTS */
 .sq-section{padding:80px 2.5rem;max-width:1140px;margin:0 auto}
 .sq-title{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,68px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:0.5rem}
-.sq-title span{color:var(--pink)}
-.sq-sub{font-size:14px;color:rgba(0,0,0,0.45);margin-bottom:3rem}
 
-/* PERSONALITY */
-.personality-top{margin-bottom:1.5rem}
-.p-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;color:var(--ink);opacity:0.5;display:inline-flex;align-items:center;gap:8px}
 .personality-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:2.5rem}
-.p-card{border-radius:16px;padding:1.5rem 1.25rem;border:2px solid rgba(0,0,0,0.06);transition:transform 0.2s}
-.p-card:hover{transform:translateY(-3px)}
-.p-card-icon{font-size:28px;margin-bottom:0.75rem}
-.p-card-title{font-family:"Archivo Black",sans-serif;font-size:14px;line-height:1.3;margin-bottom:0.4rem}
-.p-card-sub{font-size:12px;color:rgba(0,0,0,0.5);line-height:1.5}
-.p-card-yellow{background:#fff8e0}
-.p-card-pink{background:#fff0f3}
-.p-card-blue{background:#eef1ff}
-.p-card-green{background:#e8fff4}
+.p-card{border-radius:16px;padding:1.5rem 1.25rem;border:2px solid rgba(0,0,0,0.06);background:var(--white)}
 
-/* MEME */
-.meme-block{text-align:center;margin-top:1rem}
-.meme-caption{margin-bottom:1rem}
-.caveat-text{font-family:"Caveat",cursive;font-size:22px;color:rgba(0,0,0,0.55)}
-.meme-img-wrap{display:inline-block;position:relative;border:4px solid var(--black);border-radius:16px;overflow:hidden;max-width:520px;width:100%;box-shadow:6px 8px 0 var(--black)}
-.meme-img{width:100%;display:block}
-.meme-img-wrap.meme-ph{min-height:300px;background:var(--warm);display:flex;align-items:center;justify-content:center}
-.meme-ph-text{font-family:"Caveat",cursive;font-size:18px;color:rgba(0,0,0,0.4);text-align:center;padding:1rem;display:none}
-.meme-img-wrap.meme-ph .meme-ph-text{display:block}
-.meme-img-wrap.meme-ph .meme-img{display:none}
-
-/* CONTACT */
-.contact-block{background:var(--yellow);padding:90px 2.5rem;position:relative;overflow:hidden}
-.contact-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1}
-.contact-caveat{font-family:"Caveat",cursive;font-size:22px;color:rgba(0,0,0,0.45);margin-bottom:0.75rem}
-.contact-title{font-family:"Archivo Black",sans-serif;font-size:clamp(48px,9vw,110px);line-height:0.88;letter-spacing:-0.03em;color:var(--black);margin-bottom:1rem}
-.contact-title span{color:var(--pink)}
-.contact-sub{font-size:15px;color:rgba(0,0,0,0.5);margin-bottom:2.5rem}
-.contact-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
-.btn{display:inline-block;text-decoration:none;padding:14px 28px;border-radius:100px;font-family:"Archivo Black",sans-serif;font-size:13px;letter-spacing:0.03em;transition:transform 0.15s}
-.btn:hover{transform:scale(1.03)}
-.btn-black{background:var(--black);color:var(--yellow)}
-.btn-outline{border:2px solid var(--black);color:var(--black)}
-.contact-fine{font-size:12px;color:rgba(0,0,0,0.35);letter-spacing:0.06em}
-.contact-block::before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;background:var(--pink);opacity:0.12;top:-100px;right:-100px}
-.contact-block::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--blue);opacity:0.1;bottom:-80px;left:-60px}
-
-/* ANIM */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.55s ease,transform 0.55s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-left>*{animation:fadeup 0.6s ease backwards}
-.hero-left>*:nth-child(1){animation-delay:0.1s}
-.hero-left>*:nth-child(2){animation-delay:0.2s}
-.hero-left>*:nth-child(3){animation-delay:0.3s}
-.hero-left>*:nth-child(4){animation-delay:0.4s}
-.hero-left>*:nth-child(5){animation-delay:0.5s}
+.contact-block{background:var(--yellow);padding:90px 2.5rem;text-align:center}
+.contact-title{font-family:"Archivo Black",sans-serif;font-size:clamp(48px,9vw,110px);line-height:0.88;letter-spacing:-0.03em;color:var(--black)}
 
 @media(max-width:768px){
-  body{cursor:auto}.cursor-dot{display:none}
-  nav{padding:0 1.25rem}.nav-links{display:none}
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-right{min-height:auto;padding:2rem 1.25rem}
-  .hero-slides-stack{max-height:320px}
-  .section,.sq-section{padding:60px 1.25rem}
-  .pov-inner{grid-template-columns:1fr;gap:2rem}
-  .journey-card{grid-template-columns:1fr;gap:0.75rem}
-  .work-body-inner{grid-template-columns:1fr}
-  .work-card-right{display:none}
-  .ead-img-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
   .personality-inner{grid-template-columns:repeat(2,1fr)}
-  .contact-block{padding:60px 1.25rem}
-}
-  .hero-meme-card {
-  margin-top: 16px;
-  max-width: 380px; /* Increased width for better text legibility */
-  border: 3px solid var(--black);
-  border-radius: 4px; /* Sharper edges match the cinematic frame better */
-  overflow: hidden;
-  box-shadow: 6px 6px 0 var(--black);
-  transform: rotate(-1.5deg);
-  background: var(--black); /* Prevents white flicker on load */
-  transition: transform 0.3s ease;
-}
-
-.hero-meme-card:hover {
-  transform: rotate(0deg) scale(1.02);
-}
-
-.hero-meme-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media(max-width: 768px) {
-  .hero-meme-card {
-    max-width: 100%; /* Spans full width of the left column on mobile */
-    margin-bottom: 24px;
-  }
-}
-  .hero-right {
-  max-height: 100vh; /* Prevents the right side from growing forever */
-  padding: 2rem;
-}
-
-.hero-slides-stack {
-  max-height: 80%; /* Limits the height of the actual image stack */
 }
 </style>
 </head>
@@ -272,291 +121,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <a href="mailto:jaintanishq79@gmail.com" class="nav-hire">Hire Me</a>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <p class="hero-tag">Brand Strategist · India · Open to work</p>
-<div class="hero-meme-container">
-  <img src="chak-de-meme.jpg" alt="Chak De India Meme" class="hero-meme-img">
-</div>
+  <div class="hero-left">
+    <p class="hero-tag">Brand Strategist · India · Open to work</p>
+    
+    <div class="hero-meme-card">
+      <img src="D9C7FD7D-7FBB-486B-B3C0-EC34E215F68D.jpg" alt="Chak De India Meme" class="hero-meme-img">
+    </div>
+
     <h1 class="hero-name">TANISHQ<br>JAIN.</h1>
     <div class="hero-disclaimer">✕ Not the jewellery brand</div>
     <p class="hero-tagline">I help brands figure out <strong>what they're actually selling</strong> — then help the world understand it.</p>
+    
     <div class="hero-stats-row">
-      <div class="hst"><div class="hst-num">18%</div><div class="hst-label">Order volume growth</div></div>
-      <div class="hst"><div class="hst-num">4.3×</div><div class="hst-label">ROI vs 2.8× city avg</div></div>
-      <div class="hst"><div class="hst-num">30K+</div><div class="hst-label">Farmers, ₹0 ad spend</div></div>
+      <div class="hst"><div class="hst-num">18%</div><div class="hst-label">Order growth</div></div>
+      <div class="hst"><div class="hst-num">4.3×</div><div class="hst-label">ROI</div></div>
+      <div class="hst"><div class="hst-num">30K+</div><div class="hst-label">Farmers</div></div>
     </div>
   </div>
+
   <div class="hero-right">
     <div class="hero-sticker-1">Open to work ✦</div>
     <div class="hero-slides-stack">
-      <div class="hero-canva-slide hcs1">
-        <img src="intro-slide-1.jpg" alt="Slide 1" onerror="this.closest('.hero-canva-slide').classList.add('placeholder')"/>
-        <div class="slide-ph-text">intro-slide-1.jpg</div>
-      </div>
-      <div class="hero-canva-slide hcs2">
-        <img src="intro-slide-2.jpg" alt="Slide 2" onerror="this.closest('.hero-canva-slide').classList.add('placeholder')"/>
-        <div class="slide-ph-text">intro-slide-2.jpg</div>
-      </div>
-      <div class="hero-canva-slide hcs3">
-        <img src="intro-slide-3.jpg" alt="Slide 3" onerror="this.closest('.hero-canva-slide').classList.add('placeholder')"/>
-        <div class="slide-ph-text">intro-slide-3.jpg</div>
-      </div>
+      <div class="hero-canva-slide"><img src="intro-slide-1.jpg" alt="Slide 1"></div>
+      <div class="hero-canva-slide"><img src="intro-slide-2.jpg" alt="Slide 2"></div>
+      <div class="hero-canva-slide"><img src="intro-slide-3.jpg" alt="Slide 3"></div>
     </div>
-    <div class="hero-scroll-hint">scroll</div>
-  </div>
-</div>
-
-<!-- MARQUEE -->
-<div class="marquee-belt">
-  <div class="marquee-inner">
-    <span>Brand Strategy</span><span class="acc">✦</span><span>Consumer Insight</span><span class="acc">✦</span><span>Performance Marketing</span><span class="acc">✦</span><span>SKU Architecture</span><span class="acc">✦</span><span>Growth Strategy</span><span class="acc">✦</span><span>Storytelling</span><span class="acc">✦</span><span>Rural Marketing</span><span class="acc">✦</span><span>Brand Strategy</span><span class="acc">✦</span><span>Consumer Insight</span><span class="acc">✦</span><span>Performance Marketing</span><span class="acc">✦</span><span>SKU Architecture</span><span class="acc">✦</span><span>Growth Strategy</span><span class="acc">✦</span><span>Storytelling</span><span class="acc">✦</span><span>Rural Marketing</span><span class="acc">✦</span>
-  </div>
-</div>
-
-<!-- POV -->
-<div class="pov-block">
-  <div class="pov-inner">
-    <p class="pov-quote">"The most important question is <em>what is the right question.</em>"</p>
-    <p class="pov-body">Most brand problems exist because the sender doesn't know what they want to convey. Before saying anything to the world about a brand, I make sure the brand knows what it's saying — and why. That's not strategy. That's just asking the questions nobody else bothered to ask.</p>
-  </div>
-</div>
-
-<!-- WORK -->
-<section class="section" id="work">
-  <div class="section-label">The Work</div>
-  <h2 class="section-title">CASE STUDIES</h2>
-  <div class="work-grid">
-
-    <div class="work-card wc1 reveal">
-      <button class="work-card-trigger" onclick="toggleCard(this)">
-        <div class="work-card-num">01</div>
-        <div class="work-card-mid">
-          <div class="work-tags"><span class="wtag wtag-orange">Brand Building</span><span class="wtag wtag-blue">Zomato</span></div>
-          <div class="work-card-title">Took a struggling restaurant from ₹3L to ₹18L/month</div>
-        </div>
-        <div class="work-card-right">
-          <div class="wmetric"><div class="wmetric-num">₹3L→₹18L</div><div class="wmetric-label">7 months</div></div>
-          <div class="wmetric"><div class="wmetric-num">Zero drop</div><div class="wmetric-label">after price hike</div></div>
-          <div class="wplus">+</div>
-        </div>
-      </button>
-      <div class="work-card-body">
-        <div class="work-body-inner">
-          <div class="work-body-text">Given a brand doing ₹3L/month with an identity crisis. Fixed the basics first — helped them figure out who they are, sharpened the menu to match that story, priced it to reflect it. Ran performance marketing to bring traffic, used their own data to improve conversion and retention. Turned viewers into first-timers, first-timers into regulars. Grew to ₹18L by month 7, sustainably, with healthy margins.</div>
-          <div class="work-metrics">
-            <div class="wm-pill"><div class="wm-pill-num">₹3L → ₹18L</div><div class="wm-pill-label">Monthly revenue · 7 months</div></div>
-            <div class="wm-pill"><div class="wm-pill-num">Zero drop</div><div class="wm-pill-label">In orders after price increase</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-card wc2 reveal">
-      <button class="work-card-trigger" onclick="toggleCard(this)">
-        <div class="work-card-num">02</div>
-        <div class="work-card-mid">
-          <div class="work-tags"><span class="wtag wtag-green">SKU Strategy</span><span class="wtag wtag-green">Consumer Insight</span><span class="wtag wtag-blue">Zomato · National</span></div>
-          <div class="work-card-title">Solved a problem I had at my own desk — then rolled it out pan-India</div>
-        </div>
-        <div class="work-card-right">
-          <div class="wmetric"><div class="wmetric-num">5%→25%</div><div class="wmetric-label">Bowl/thali share</div></div>
-          <div class="wmetric"><div class="wmetric-num">Pan-India</div><div class="wmetric-label">Scale</div></div>
-          <div class="wplus">+</div>
-        </div>
-      </button>
-      <div class="work-card-body">
-        <div class="work-body-inner">
-          <div>
-            <div class="work-body-text">The insight was personal — I'd order food at work and never know if I could actually eat it at my desk without making a mess. Nobody was solving for certainty. My SKU contribution: rice bowls that worked across cuisines (north Indian, south Indian, Andhra, Chinese), meal combos with a cutlery kit, portions adjusted so the pricing made sense. Items that travelled well, looked intentional, solved "no clutter while eating." Weekday volumes moved. Rolled out nationally.</div>
-            <div class="ead-img-grid">
-              <img src="ead-dish-1.jpg" alt="Desk-friendly dish" onerror="this.style.minHeight='100px'"/>
-              <img src="ead-dish-2.jpg" alt="Rice bowl" onerror="this.style.minHeight='100px'"/>
-              <img src="ead-dish-3.jpg" alt="Meal combo" onerror="this.style.minHeight='100px'"/>
-              <img src="ead-app-1.jpg" alt="App screenshot" onerror="this.style.minHeight='100px'"/>
-            </div>
-          </div>
-          <div class="work-metrics">
-            <div class="wm-pill"><div class="wm-pill-num">5% → 25%</div><div class="wm-pill-label">Bowl/thali share for partners</div></div>
-            <div class="wm-pill"><div class="wm-pill-num">Pan-India</div><div class="wm-pill-label">National rollout</div></div>
-            <div class="wm-pill"><div class="wm-pill-num">↑ Weekday</div><div class="wm-pill-label">Orders for participating partners</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-card wc3 reveal">
-      <button class="work-card-trigger" onclick="toggleCard(this)">
-        <div class="work-card-num">03</div>
-        <div class="work-card-mid">
-          <div class="work-tags"><span class="wtag wtag-blue">Repositioning</span><span class="wtag wtag-blue">Zomato</span></div>
-          <div class="work-card-title">One restaurant with no identity → three brands that actually worked</div>
-        </div>
-        <div class="work-card-right">
-          <div class="wmetric"><div class="wmetric-num">1→3</div><div class="wmetric-label">Brands created</div></div>
-          <div class="wmetric"><div class="wmetric-num">Month 1</div><div class="wmetric-label">New kitchen wins</div></div>
-          <div class="wplus">+</div>
-        </div>
-      </button>
-      <div class="work-card-body">
-        <div class="work-body-inner">
-          <div class="work-body-text">People associate specialised-sounding brands with higher quality — even if it comes from the same kitchen. Like thinking a comedian can't do serious roles. A multicuisine restaurant happy at breakeven had no reason for anyone to choose them. Split into focused cloud kitchens. The Asian kitchen alone in its first month outperformed the full restaurant's last month. Smaller menus helped too — someone looking for noodles doesn't want to scroll past pasta first.</div>
-          <div class="work-metrics">
-            <div class="wm-pill"><div class="wm-pill-num">1 → 3</div><div class="wm-pill-label">Brands from one outlet</div></div>
-            <div class="wm-pill"><div class="wm-pill-num">Month 1</div><div class="wm-pill-label">Asian kitchen > restaurant's last month</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-card wc4 reveal">
-      <button class="work-card-trigger" onclick="toggleCard(this)">
-        <div class="work-card-num">04</div>
-        <div class="work-card-mid">
-          <div class="work-tags"><span class="wtag wtag-pink">Performance Marketing</span><span class="wtag wtag-blue">Zomato</span></div>
-          <div class="work-card-title">50% better ROI than city average on in-app performance marketing</div>
-        </div>
-        <div class="work-card-right">
-          <div class="wmetric"><div class="wmetric-num">4.3×</div><div class="wmetric-label">vs 2.8× city avg</div></div>
-          <div class="wmetric"><div class="wmetric-num">₹20–30L</div><div class="wmetric-label">Monthly ad rev</div></div>
-          <div class="wplus">+</div>
-        </div>
-      </button>
-      <div class="work-card-body">
-        <div class="work-body-inner">
-          <div class="work-body-text">Restaurant owners don't buy ad packages. They buy a future they can see themselves in. Stopped pitching impressions, started pitching 9-month roadmaps — location, cuisine fit, pricing, SKU strategy backed by data. For one chain planning 5 outlets in 9 months, sat in menu sampling and packaging reviews. Gave them a picture of who they'd be. They invested. Closed ₹20–30L monthly while maintaining a 4.3× ROI — 50% above the 2.8× city average.</div>
-          <div class="work-metrics">
-            <div class="wm-pill"><div class="wm-pill-num">4.3× ROI</div><div class="wm-pill-label">vs 2.8× city average</div></div>
-            <div class="wm-pill"><div class="wm-pill-num">₹20–30L</div><div class="wm-pill-label">Monthly ad revenue closed</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="work-card wc5 reveal">
-      <button class="work-card-trigger" onclick="toggleCard(this)">
-        <div class="work-card-num">05</div>
-        <div class="work-card-mid">
-          <div class="work-tags"><span class="wtag wtag-purple">Grassroots Brand Building</span><span class="wtag wtag-purple">Shreedhi</span></div>
-          <div class="work-card-title">Built brand trust with 30,000 farmers. No internet. No budget. No shortcuts.</div>
-        </div>
-        <div class="work-card-right">
-          <div class="wmetric"><div class="wmetric-num">500+</div><div class="wmetric-label">Villages</div></div>
-          <div class="wmetric"><div class="wmetric-num">30K+</div><div class="wmetric-label">Farmers</div></div>
-          <div class="wplus">+</div>
-        </div>
-      </button>
-      <div class="work-card-body">
-        <div class="work-body-inner">
-          <div class="work-body-text">Marketing isn't just about attracting customers — it's about understanding what they actually need. With farmers who had every reason to say no, we listened first. Heard every problem, big or small. Replaced jargon with examples from their own lives. Designed a payment model where costs were deducted from milk procurement — removed upfront risk entirely. First farmer said yes, their story became the pitch for the next village. Patience and listening, not campaigns.</div>
-          <div class="work-metrics">
-            <div class="wm-pill"><div class="wm-pill-num">500+</div><div class="wm-pill-label">Villages reached</div></div>
-            <div class="wm-pill"><div class="wm-pill-num">30,000+</div><div class="wm-pill-label">Dairy farmers engaged</div></div>
-            <div class="wm-pill"><div class="wm-pill-num">₹0</div><div class="wm-pill-label">Ad spend</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- JOURNEY -->
-<div class="journey-bg" id="journey">
-  <div class="journey-inner">
-    <h2 class="journey-title">THE <span>JOURNEY</span></h2>
-    <div class="journey-cards">
-      <div class="journey-card reveal">
-        <div class="journey-left">
-          <div class="journey-period">Jul 2025 – Present</div>
-          <img src="logo-shreedhi.png" alt="Shreedhi" class="j-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"/>
-          <span class="j-badge j-shreedhi" style="display:none">Shreedhi</span>
-        </div>
-        <div>
-          <div class="journey-role">Generalist</div>
-          <div class="journey-desc">Expanding veterinary care to 500+ villages, 30,000+ dairy farmers. Built a payment model that removed financial friction. Learnt that the best marketing is just listening well.</div>
-        </div>
-      </div>
-      <div class="journey-card reveal">
-        <div class="journey-left">
-          <div class="journey-period">Dec 2023 – Jul 2025</div>
-          <img src="logo-zomato.png" alt="Zomato" class="j-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"/>
-          <span class="j-badge j-zomato" style="display:none">Zomato</span>
-        </div>
-        <div>
-          <div class="journey-role">Key Accounts Manager</div>
-          <div class="journey-desc">200+ partners. 18% order volume growth. ₹80–100L monthly revenue. 4.3× in-app ROI. Contributed to Eat at Desk nationally. Mentored 15 KAMs.</div>
-        </div>
-      </div>
-      <div class="journey-card reveal">
-        <div class="journey-left">
-          <div class="journey-period">Aug 2020 – Jun 2023</div>
-          <img src="logo-christ.png" alt="Christ University" class="j-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"/>
-          <span class="j-badge j-christ" style="display:none">Christ University</span>
-        </div>
-        <div>
-          <div class="journey-role">BBA — Finance & International Business · 8.77 GPA</div>
-          <div class="journey-desc">Founding member of iBiz. Captained football & cricket. Scriptwriter, graphic designer, theatre actor. Short film with 10K+ views. Built the foundations before knowing what to call them.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- SIDEQUESTS -->
-<section class="sq-section" id="sidequests">
-  <h2 class="sq-title">SIDE<span>QUESTS</span></h2>
-  <p class="sq-sub">What happens when the brief is entirely self-assigned.</p>
-
-  <!-- PERSONALITY -->
-  <div class="personality-top reveal">
-    <div class="p-label">✦ Also, for the record</div>
-  </div>
-  <div class="personality-inner reveal">
-    <div class="p-card p-card-yellow">
-      <div class="p-card-icon">🎯</div>
-      <div class="p-card-title">Expert in making memes &amp; stickers</div>
-      <div class="p-card-sub">10/10 for a good laugh. Ask anyone who's worked with him.</div>
-    </div>
-    <div class="p-card p-card-pink">
-      <div class="p-card-icon">🎬</div>
-      <div class="p-card-title">Drops references like it's a habit</div>
-      <div class="p-card-sub">Movies, shows, real life — if there's a parallel, it's coming out.</div>
-    </div>
-    <div class="p-card p-card-blue">
-      <div class="p-card-icon">💡</div>
-      <div class="p-card-title">Says what everyone's already thinking</div>
-      <div class="p-card-sub">Just with better timing and a straighter face.</div>
-    </div>
-    <div class="p-card p-card-green">
-      <div class="p-card-icon">🎭</div>
-      <div class="p-card-title">Wit + misdirection = his love language</div>
-      <div class="p-card-sub">Ask his friends. They'll confirm. Reluctantly.</div>
-    </div>
-  </div>
-
-  <div class="meme-block reveal">
-    <div class="meme-caption">
-      <span class="caveat-text">and finally, the most accurate summary of his brand philosophy:</span>
-    </div>
-    <div class="meme-img-wrap" id="memeWrap">
-      <img src="portfolio-meme.jpg" alt="The meme" class="meme-img" onerror="document.getElementById('memeWrap').classList.add('meme-ph')"/>
-      <div class="meme-ph-text">Upload your meme as <strong>portfolio-meme.jpg</strong></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<div class="contact-block" id="contact">
-  <div class="contact-inner">
-    <p class="contact-caveat">still here? nice.</p>
-    <h2 class="contact-title">LET'S BUILD<br><span>SOMETHING.</span></h2>
-    <p class="contact-sub">Open to brand strategy roles. Senior ones especially.</p>
-    <div class="contact-btns">
-      <a href="mailto:jaintanishq79@gmail.com" class="btn btn-black">jaintanishq79@gmail.com</a>
-      <a href="https://www.linkedin.com/in/tanishq-jain-8b79241b0/" class="btn btn-outline">LinkedIn</a>
-    </div>
-    <p class="contact-fine">+91 99934 31111 · Bhopal · Not the jewellery brand.</p>
   </div>
 </div>
 
@@ -566,22 +156,6 @@ document.addEventListener("mousemove", e => {
   dot.style.left = e.clientX + "px";
   dot.style.top = e.clientY + "px";
 });
-document.querySelectorAll("a,button,.work-card,.journey-card,.p-card").forEach(el => {
-  el.addEventListener("mouseenter", () => dot.classList.add("hover"));
-  el.addEventListener("mouseleave", () => dot.classList.remove("hover"));
-});
-
-function toggleCard(btn) {
-  const card = btn.closest(".work-card");
-  const isOpen = card.classList.contains("open");
-  document.querySelectorAll(".work-card.open").forEach(c => c.classList.remove("open"));
-  if (!isOpen) card.classList.add("open");
-}
-
-const ro = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) e.target.classList.add("visible");
-}), {threshold: 0.07});
-document.querySelectorAll(".reveal").forEach(el => ro.observe(el));
 </script>
 </body>
 </html>
