@@ -30,38 +30,51 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-hire:hover{transform:scale(1.04)}
 
 /* HERO */
-.hero{min-height:100vh;padding-top:52px;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
-.hero-left{background:var(--yellow);padding:4rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center;position:relative}
-.hero-tag{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(0,0,0,0.45);margin-bottom:1.5rem;font-weight:500}
-.hero-name{font-family:"Archivo Black",sans-serif;font-size:clamp(52px,7vw,88px);line-height:0.92;letter-spacing:-0.03em;color:var(--black);margin-bottom:1rem}
-.hero-name .crossed{position:relative;display:inline-block;color:rgba(0,0,0,0.25)}
-.hero-name .crossed::after{content:"";position:absolute;left:-3px;right:-3px;top:46%;height:6px;background:var(--pink);border-radius:2px;transform:rotate(-2deg)}
-.hero-disclaimer{display:inline-block;background:var(--black);color:var(--yellow);font-size:12px;font-weight:600;letter-spacing:0.06em;padding:6px 14px;border-radius:100px;margin-bottom:2rem}
-.hero-tagline{font-family:"Caveat",cursive;font-size:clamp(22px,3vw,30px);line-height:1.35;color:var(--black);max-width:400px;margin-bottom:2.5rem}
-.hero-tagline strong{font-weight:700}
-.hero-stats-row{display:flex;gap:1.5rem;flex-wrap:wrap}
-.hst{background:var(--black);color:var(--yellow);border-radius:12px;padding:12px 18px}
-.hst-num{font-family:"Archivo Black",sans-serif;font-size:22px;line-height:1}
-.hst-label{font-size:11px;color:rgba(255,220,0,0.6);margin-top:2px}
+.hero {
+  min-height: auto; /* Stops the pink side from stretching to the bottom */
+  padding-top: 52px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
 
-/* HERO RIGHT - stacked slides */
-.hero-right{background:var(--pink);display:flex;flex-direction:column;justify-content:flex-start;padding:2.5rem 2.5rem 2rem;position:relative;overflow:hidden;gap:1rem}
-.hero-sticker-1{display:inline-block;background:var(--yellow);color:var(--black);font-family:"Archivo Black",sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;padding:8px 14px;border-radius:100px;transform:rotate(8deg);box-shadow:2px 3px 0 rgba(0,0,0,0.2);align-self:flex-end}
-.hero-slides-stack{display:flex;flex-direction:column;gap:10px;overflow-y:auto;flex:1;scrollbar-width:none}
-.hero-slides-stack::-webkit-scrollbar{display:none}
-.hero-canva-slide{border:3px solid white;border-radius:10px;overflow:hidden;box-shadow:3px 5px 20px rgba(0,0,0,0.2);background:rgba(255,255,255,0.15);position:relative;flex-shrink:0}
-.hero-canva-slide img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
-.hero-canva-slide.placeholder img{display:none}
-.hero-canva-slide.placeholder{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
-.slide-ph-text{display:none;font-family:"Caveat",cursive;font-size:15px;color:rgba(255,255,255,0.6);text-align:center;padding:1rem}
-.hero-canva-slide.placeholder .slide-ph-text{display:block}
-.hcs1{transform:rotate(-0.8deg)}
-.hcs2{transform:rotate(0.5deg)}
-.hcs3{transform:rotate(-0.4deg)}
-.hero-scroll-hint{font-family:"Caveat",cursive;font-size:17px;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px;align-self:flex-end;margin-top:auto}
-.hero-scroll-hint::after{content:"↓";font-size:20px;color:white;animation:bounce 1.5s ease-in-out infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.hero-left {
+  background: var(--yellow);
+  padding: 4rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns items to the top */
+}
 
+/* Specific spacing for the meme between text */
+.hero-meme-card {
+  margin: 10px 0 25px 0; 
+  max-width: 320px;
+  border: 3px solid var(--black);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 6px 6px 0 var(--black);
+  transform: rotate(-1.5deg);
+  background: var(--black);
+}
+
+.hero-right {
+  background: var(--pink);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  max-height: 850px; /* Constrains the image height */
+}
+
+.hero-slides-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  max-height: 650px;
+}
 /* MARQUEE */
 .marquee-belt{background:var(--black);overflow:hidden;padding:13px 0;border-top:2px solid var(--yellow);border-bottom:2px solid var(--yellow)}
 .marquee-inner{display:flex;white-space:nowrap;animation:mscroll 20s linear infinite}
@@ -258,17 +271,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 <div class="hero">
   <div class="hero-left">
     <p class="hero-tag">Brand Strategist · India · Open to work</p>
-    <h1 class="hero-name"><span class="crossed">TANISHQ</span><br>JAIN.</h1>
+    <h1 class="hero-name"> TANISHQ<br>JAIN.</h1>
     <div class="hero-disclaimer">✕ Not the jewellery brand</div>
+     <div class="hero-meme-card">
+      <img src="chak-de-meme.jpg" alt="Chak De India Meme" onerror="this.closest('.hero-meme-card').style.display='none'"/>
+    </div>
     <p class="hero-tagline">I help brands figure out <strong>what they're actually selling</strong> — then help the world understand it.</p>
     <div class="hero-stats-row">
       <div class="hst"><div class="hst-num">18%</div><div class="hst-label">Order volume growth</div></div>
       <div class="hst"><div class="hst-num">4.3×</div><div class="hst-label">ROI vs 2.8× city avg</div></div>
       <div class="hst"><div class="hst-num">30K+</div><div class="hst-label">Farmers, ₹0 ad spend</div></div>
     </div>
-    <div class="hero-meme-card">
-      <img src="chak-de-meme.jpg" alt="Chak De India Meme" onerror="this.closest('.hero-meme-card').style.display='none'"/>
-    </div>
+  
   </div>
   <div class="hero-right">
     <div class="hero-sticker-1">Open to work ✦</div>
